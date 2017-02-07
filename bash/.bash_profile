@@ -98,22 +98,22 @@ fi
 # for homebrew
 export PATH=/usr/local/bin:$PATH
 
-# pip should only run if there is a virtualenv currently activated
+# пип должен работать только при наличии virtualenv активированной
 export PIP_REQUIRE_VIRTUALENV=true
-# cache pip-installed packages to avoid re-downloading
+# Кэш пип-установленных пакетов, чтобы избежать повторного скачивания
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
-# don't let virtualenv show prompts by itself
+# не позволяйте virtualenv шоу подсказки от себя
 VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Rust lang: racer autocomplete settings
 export RUST_SRC_PATH=$HOME/rust/src
 
-# flags for some Python librarires
+# флаги для некоторых библиотек Python
 ARCHFLAGS="-arch i386 -arch x86_64"
 PKG_CONFIG_PATH=/usr/local/Cellar/libffi/3.0.13/lib/pkgconfig/
 
-# user aliases
+# псевдонимы пользователя
 alias ..='cd ..'
 
 # Docker preferences
