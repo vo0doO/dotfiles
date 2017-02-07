@@ -2,10 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# If not running interactively, don't do anything
+# Если не работает в интерактивном режиме, ничего не делают
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
+#не ставьте повторяющиеся строки в истории. См Баш (1) для более опций
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
@@ -20,10 +20,10 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
+# сделать менее более дружественным для входных файлов нетекстовыми см lesspipe (1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
+# установить переменную идентификации CHROOT вы работаете в (используется в следующем приглашении)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
@@ -56,7 +56,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
+# Если это Xterm установить заголовок для пользователя @ хост: реж
 case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
@@ -65,7 +65,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
+# включить цветовую поддержку Ls, а также добавить удобные псевдонимы
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -99,15 +99,15 @@ fi
 #fi
 
 # FOR GO LANGUAGE settings
-#This line will tell the Go installer where to place the source code before compilation
+#Этот линия расскажет инсталлятор туда, куда поместить исходный код до компиляции
 export GOROOT=$HOME/GoSource
-#With this line, you choose the architecture of your machine.  
-#Those with 64 bit CPUs should enter "amd64" here.  
+#With Этой линии, вы выбираете архитектуру вашей машины.
+#Those С 64-битных процессоров должны ввести "amd64" здесь.
 export GOARCH=386
-#Your operating system
+# Ваш операционной системы
 export GOOS=linux
-#And now the location where the installer will place the finished files
-#Don't forget to create this directory before installing
+# Теперь и место, где программа установки разместит готовые файлы
+# Не забудьте создать эту директорию перед установкой
 export GOBIN=$HOME/GoBin
-#Include Go binaries in command path
+# Включите Go бинарных файлов в командной пути
 export PATH=$PATH:$GOBIN
