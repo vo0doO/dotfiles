@@ -7,13 +7,13 @@ inst_plug_vim() {
   sudo apt-get update && \
   sudo apt-get install vim && \
   echo "[+] Vim"
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && \
+  sudo git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && \
   echo "[+] Vundle"
-  git clone https://github.com/Relrin/dotfiles.git ~/Programs/dotfiles/ && \
+  sudo git clone https://github.com/Relrin/dotfiles.git ~/Programs/dotfiles/ && \
   echo "[+] dotfile repo"
-  cp -r ~/Programs/dotfiles/vim/* ~/.vim/ && \
+  sudo cp -r ~/Programs/dotfiles/vim/* ~/.vim/ && \
   echo "[+] dotfile in ~/.vim/"
-  mv ~/Programs/dotfiles/vim/.vimrc ~/
+  sudo mv ~/Programs/dotfiles/vim/.vimrc ~/
   echo "[+] .vimrc"
 }
 
